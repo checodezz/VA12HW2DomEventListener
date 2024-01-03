@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+  <label for='inputCountry'>Enter your country: </label>
+  <input type="text" id="inputCountry">
+  <button id="displayCountryButton"> Display Country</button>
+  <p id="countryResult"></p>
+
+  <label for="inputWebsiteName">Enter a website name: </label>
+  <input type="text" id="inputWebsiteName">
+  <button id="inputWebsiteNameButton">Display Heading</button>
+  <p id="inputWebsiteNameResult"></p>
+
+  <label for="studentInput">Are you a Student? </label>
+  <input type="text" id="studentInput">
+  <button id="studentInputButton">Display Response</button>
+  <p id="studentInputResponse"></p>
+
+  <label for="inputAge">Enter your age: </label>
+  <input type="text" id="inputAge">
+  <button id="checkAgeButton">Check age</button>
+  <p id="ageResult"></p>
+
+</body>
+
+<script>
+
+  const inputCountry = document.getElementById('inputCountry')
+  const displayCountryButton = document.getElementById('displayCountryButton')
+  const countryResult = document.getElementById('countryResult')
+
+  displayCountryButton.addEventListener('click', function () {
+    let countryValue = inputCountry.value
+    countryResult.textContent = `Your Country is: ${countryValue}`
+  })
+
+  const inputWebsiteName = document.getElementById('inputWebsiteName')
+  const inputWebsiteNameButton = document.getElementById('inputWebsiteNameButton')
+  const inputWebsiteNameResult = document.getElementById('inputWebsiteNameResult')
+
+  inputWebsiteNameButton.addEventListener('click', function () {
+    const value = inputWebsiteName.value
+    inputWebsiteNameResult.innerHTML = `<h1>${value}</h1>`
+  })
+
+  const studentInput = document.getElementById('studentInput')
+  const studentInputButton = document.getElementById('studentInputButton')
+  const studentInputResponse = document.getElementById('studentInputResponse')
+
+
+  studentInputButton.addEventListener('click', function () {
+    let value = studentInput.value.toLowerCase()
+    if (value === 'yes') {
+      studentInputResponse.textContent = `You are a student`
+    } else if(value === 'no'){
+      studentInputResponse.textContent = `You are not a student`
+    } else {
+      studentInputResponse.textContent = `Invalid response. Please enter 'Yes' or 'No'.`
+    }
+  })
+  const inputAge = document.getElementById('inputAge')
+  const checkAgeButton = document.getElementById('checkAgeButton')
+  const ageResult = document.getElementById('ageResult')
+
+
+  checkAgeButton.addEventListener('click', function(){
+
+    const age = inputAge.value 
+
+    if(age < 18){
+      ageResult.textContent = 'You are a minor'
+    } else {
+      ageResult.textContent = 'You are an adult.'
+    }
+  })
+
+
+</script>
+
+</html>
